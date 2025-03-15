@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F2F2F2;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #FFEB99; /* Amarillo suave */
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(244, 202, 202, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 40px;
+    color: #ac9fff; /* Morado pastel */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: bounce cubic-bezier(0.445, 0.05, 0.55, 0.95) ease-in-out infinite;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fa759b;
+    font-weight: 800;
+    text-transform: unset;
+    transition: color 0.3s;
+    position: relative;
+}
+
+header nav ul li a:hover {
+    color: #fffcfe;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fc9295;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 20px;
+    background-color: #a8b1fc;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content {
+    max-width: 54%;
+}
+
+.bubble-title {
+    font-size: 60px;
+    font-weight: 800;
+    color: #FF5A5F; 
+    text-align: center;
+    animation: bubbleEffect 3s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(255, 90, 95, 0.6);
+}
+
+.hero p {
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.hero .btn {
+    background-color: #FF5A5F;
+    color: rgb(245, 245, 245);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.hero .btn:hover {
+    transform: translateY(-5px);
+}
+
+.hero .hero-image img {
+    max-width: 60%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero .hero-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes bubbleEffect {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+
+/* Estilo de la sección "¿Quiénes Somos?" */
+.about {
+    background-color: #F7F7F7; /* Fondo suave */
+    padding: 50px 0;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out; /* Animación al cargar */
+}
+
+/* Estilo de la cabecera "¿Quiénes Somos?" */
+.about-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #FFB6C1; /* Rosa pastel */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: bounceIn 1.5s ease-out; /* Animación de rebote */
+}
+
+/* Estilo de los párrafos */
+.about-text {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #c2b9ff; /* Morado pastel */
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; /* Animación de desvanecimiento */
+}
+
+/* Animación de entrada de la sección */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de rebote para el título */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-300px);
+    }
+    60% {
+        transform: translateY(30px);
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animación de desvanecimiento para los párrafos */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo de la sección */
+.about-container {
+    padding: 50px 0;
+    animation: fadeInUp 1s ease-in-out; /* Añadiendo animación */
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #555; 
+    margin: 15px 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; /* Animación para los párrafos */
+}
+
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #FFEB99; /* Amarillo suave */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin: 15px 0;
+    color: #6A5ACD;
+}
+
+.buy-btn {
+    background-color: #FF5A5F; /* Rosa pastel */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #FF2D3C;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    background-color: #D3F4F9; /* Azul pastel */
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: #6A5ACD; /* Morado pastel */
+}
+
+.contact button {
+    background-color: #FF5A5F;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #FF2D3C;
+}
+
+footer {
+    background-color: #6A5ACD;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@keyframes fadeIn {
+    2% { opacity: 0; }
+    100% { opacity: 1; }
+}
